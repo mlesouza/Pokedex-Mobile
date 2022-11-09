@@ -1,0 +1,38 @@
+type Pokemon {
+  pokedexNumber: String
+  name: String
+  image: String
+  imageHome: String
+  imageDreamWorld: String
+  types: [Type]
+  color: String
+  number: Int
+  weight: Float
+  weightFormatted: String
+  height: Float
+  heightFormatted: String
+  stats: [Stat]
+  abilities: [Ability]
+}
+
+type Type {
+  slot: Int
+  name: String
+}
+
+type Stat {
+  name: String
+  valueBase: Int
+  effort: Int
+}
+
+type Ability {
+  name: String
+  isHidden: Boolean
+  slot: Int
+}
+
+type Query {
+  getPokemons(offset: Int, limit: Int): [Pokemon]
+  pokemon(name: String): Pokemon
+}
